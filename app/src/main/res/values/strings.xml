@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TIA MEIRE REFEICOES</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="cad_produto">CADASTRO DE PRODUTO</string>
+    <string name="lista_produto">LISTAGEM DE PRODUTOS</string>
+    <string name="cad_entrega">SOLICITAR UMA ENTREGA</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu_plano">Menu_plano</string>
+    <string name="title_activity_novo__prato">Novo_Prato</string>
+    <string name="title_activity_listagem_produtos">Listagem_Produtos</string>
+</resources>
