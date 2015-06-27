@@ -34,6 +34,15 @@ public class Menu_plano extends Activity {
         });
 
 
+        ImageView btn_edit_prato = (ImageView) findViewById(R.id.btn_edit_prato);
+        btn_edit_prato.setClickable(true);
+        btn_edit_prato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EdicaoDEprato();
+            }
+        });
+
         ImageView btn_lista_pedidos = (ImageView) findViewById(R.id.btn_lista_pedidos);
         btn_lista_pedidos.setClickable(true);
         btn_lista_pedidos.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +75,21 @@ public class Menu_plano extends Activity {
             public void run() {
                 //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
                 Intent i = new Intent(Menu_plano.this,Novo_Prato.class);
+                startActivity(i);
+                finish();
+            }
+        },1500); // conta 2 seg
+
+    }
+
+    public void EdicaoDEprato(){
+        Handler h = new Handler();
+
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
+                Intent i = new Intent(Menu_plano.this,Editar_Prato.class);
                 startActivity(i);
                 finish();
             }
