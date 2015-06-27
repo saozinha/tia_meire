@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,7 +31,7 @@ public class Listagem_Produtos extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // fim
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.novo__prato_activity);
+        setContentView(R.layout.item_prato);
 
         AcoesDataBase bd = new AcoesDataBase(this);
 
@@ -40,9 +43,49 @@ public class Listagem_Produtos extends Activity {
         ProdutoAdapter adapter = new ProdutoAdapter(lista, this);
 
         //PROCURA PELA LISTVIEW NO LAYTOU
-        ListView listprod = (ListView) findViewById(R.id.listagem_produtos);
+        final ListView listprod = (ListView) findViewById(R.id.listagem_produtos);
         listprod.setAdapter(adapter);
+
+   // -------------------------------------------------------------------------------------
+        // ------- se clicar no item da lista ---------------
+        listprod.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // ListView Clicked item index
+                int itemPosition = position;
+
+                // ListView Clicked item value
+                String  itemValue = (String) listprod.getItemAtPosition(position);
+
+                //---- CHamar o editar
+                EdicaoDEprato();
+                // Show Alert
+                //Toast.makeText(getApplicationContext(), "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        // -------------------------------------------------------------------------------------
     }
+
+    public void EdicaoDEprato(){
+        Handler h = new Handler();
+
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
+                Intent i = new Intent(Listagem_Produtos.this,Editar_Prato.class);
+                startActivity(i);
+                finish();
+            }
+        },1500); // conta 2 seg
+
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
