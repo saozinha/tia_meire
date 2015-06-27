@@ -1,6 +1,7 @@
 package com.conceicaolourenco.tiameirerefeicoes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import to.Produto;
 
 public class Novo_Prato extends Activity {
 
+    private Context context;
     private Produto produto = new Produto();
     private EditText editCodigo;
     private EditText descricaoEt;
@@ -38,14 +40,14 @@ public class Novo_Prato extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // fim
         super.onCreate(savedInstanceState);
+        // ira inflar o layout novo prato
         setContentView(R.layout.novo__prato_activity);
 
         editCodigo = (EditText)findViewById(R.id.editCodigo);
         descricaoEt = (EditText)findViewById(R.id.editDescricao);
         precoEt = (EditText)findViewById(R.id.editPreco);
         salvarBt = (Button)findViewById(R.id.bt_enviar);
-        editarBt = (Button)findViewById(R.id.bt_editar);
-
+       // editarBt = (Button)findViewById(R.id.bt_editar);
 
         Intent intent = getIntent();
         // se já houver valor no layout
@@ -61,7 +63,7 @@ public class Novo_Prato extends Activity {
                 precoEt.setText(produto.getPreco());
 
                 // se houver valor - deixar editar
-                editarBt.setVisibility(View.VISIBLE);
+                //editarBt.setVisibility(View.VISIBLE);
                 //salvarBt.setVisibility(View.INVISIBLE);
 
             }
@@ -69,9 +71,17 @@ public class Novo_Prato extends Activity {
             //editarBt.setVisibility(View.INVISIBLE);
         }
 
+        salvarBt.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(context, Novo_Prato.class);
+                salvarProduto();
+            }
+        });
+
     }
 
-    public void salvarProduto(View v) {
+    public void salvarProduto() {
 
         //Toast.makeText(this, "Vamos Inserir um Produto !!", Toast.LENGTH_SHORT).show();
 
@@ -89,7 +99,7 @@ public class Novo_Prato extends Activity {
 
         //helper.close();
     }
-
+/*
     public void editarProduto(View v) {
 
         String descprod = descricaoEt.getText().toString();
@@ -105,7 +115,7 @@ public class Novo_Prato extends Activity {
 
         //helper.close();
     }
-
+*/
     public void menu_plano(){
         Handler h = new Handler();
 
