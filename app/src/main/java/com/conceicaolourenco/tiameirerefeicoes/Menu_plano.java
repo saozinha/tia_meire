@@ -104,7 +104,7 @@ public class Menu_plano extends Activity {
             @Override
             public void run() {
                 //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
-                Intent i = new Intent(Menu_plano.this,Novo_Prato.class);
+                Intent i = new Intent(Menu_plano.this,Listagem_Produtos.class);
                 startActivity(i);
                 finish();
             }
