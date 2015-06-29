@@ -75,7 +75,6 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editDescricao"
             android:id="@+id/editPreco"
             android:layout_alignParentStart="true"
             android:padding="20dp"
@@ -87,6 +86,11 @@
     </LinearLayout>
 
     <!-- BOTOES ACIMA -->
+    <!--
+    Criar uma caixa
+
+    http://escoladeandroid.blogspot.com.br/2012/05/criando-um-custom-dialog.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+EscolaDeAndroid+(Escola+de+Android)
+    -->
 
     <LinearLayout
         android:layout_width="match_parent"
