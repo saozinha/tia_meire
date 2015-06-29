@@ -9,4 +9,6 @@
     <string name="title_activity_menu_plano">Menu_plano</string>
     <string name="title_activity_novo__prato">Novo_Prato</string>
     <string name="title_activity_listagem_produtos">Listagem_Produtos</string>
+    <string name="title_activity_editar_prato">editar_prato</string>
+    <string name="title_activity_custom_dialog">CustomDialogActivity</string>
 </resources>
