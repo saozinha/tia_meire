@@ -1,9 +1,15 @@
 package to;
 
+import java.io.Serializable;
+
 /**
  * Created by ConceicaoLourenco on 25/06/2015.
  */
-public class Produto {
+public class Produto implements Serializable {
+
+    // identifica o objeto para serialização - ou seja, transportar um objeto pela rede
+    private static final long serialVersionUID = 1L;
+
     public Long id;
     public int imagem;
     public String descricao;
@@ -55,4 +61,6 @@ public class Produto {
     public void setPreco(String preco) {
         this.preco = preco;
     }
+
+
 }

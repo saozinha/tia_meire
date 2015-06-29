@@ -109,6 +109,7 @@ public class Menu_plano extends Activity {
                 //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
                 //Intent i = new Intent(Menu_plano.this,Editar_Prato.class);
                 Intent i = new Intent(Menu_plano.this,Editar_Prato.class);
+                i.putExtra("Editar_codigo", "Editar_codigo");
                 startActivity(i);
               finish();
             }

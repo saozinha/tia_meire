@@ -38,8 +38,8 @@ public class ProdutoAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
-        //return listaProdutos.get(position);
+        //return null;
+        return listaProdutos.get(position);
     }
 
     @Override

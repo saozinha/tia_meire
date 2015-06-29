@@ -111,6 +111,20 @@
             android:layout_height="wrap_content"
             android:background="#ffff0364" />
 
+        <Button
+            android:text="Excluir"
+            android:textSize="30sp"
+            android:id="@+id/bt_excluir"
+            android:onClick="excluirProduto"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffff0364" />
+
+
     </LinearLayout>
 
     <!-- FIM DOS BOTOES -->

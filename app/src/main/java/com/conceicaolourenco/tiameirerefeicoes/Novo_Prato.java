@@ -1,7 +1,7 @@
 package com.conceicaolourenco.tiameirerefeicoes;
 
 import android.app.Activity;
-import android.content.Context;
+//import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
@@ -15,23 +15,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import SQLite.AcoesDataBase;
-import SQLite.DataBaseHelper;
+//import SQLite.DataBaseHelper;
 import to.Produto;
 
 
 public class Novo_Prato extends Activity {
 
-    private Context context;
-    private Produto produto = new Produto();
-    private EditText editCodigo;
-    private EditText descricaoEt;
+    //private Context context;
+    public Produto produto = new Produto();
+    public EditText editCodigo;
+    public EditText descricaoEt;
     private EditText precoEt;
-    private Button salvarBt;
-    private Button editarBt;
-    private Button retornaBt;
+    public Button salvarBt;
 
     // REFERENCIANDO A BASE DE DADOS
-    private DataBaseHelper helper;
+    //private DataBaseHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +83,7 @@ public class Novo_Prato extends Activity {
 
         //Toast.makeText(this, "Vamos Inserir um Produto !!", Toast.LENGTH_SHORT).show();
 
-        Long id_prod = produto.getId();
+        //Long id_prod = produto.getId();
         String descprod = descricaoEt.getText().toString();
         String preco = precoEt.getText().toString();
 
@@ -99,36 +97,19 @@ public class Novo_Prato extends Activity {
 
         //helper.close();
     }
-/*
-    public void editarProduto(View v) {
 
-        String descprod = descricaoEt.getText().toString();
-        String preco = precoEt.getText().toString();
-
-        produto.setDescricao(descprod);
-        produto.setPreco(preco);
-
-        AcoesDataBase bd = new AcoesDataBase(this);
-        bd.atualizar(produto);
-
-        Toast.makeText(this, "Produto > "+ produto.getDescricao()+" atualizado !!", Toast.LENGTH_SHORT).show();
-
-        //helper.close();
-    }
-*/
-    public void menu_plano(){
+    public void Tela_Menu() {
         Handler h = new Handler();
 
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(Novo_Prato.this,Menu_plano.class);
+                Intent i = new Intent(Novo_Prato.this, Menu_plano.class);
                 startActivity(i);
                 finish();
             }
-        },1000); // conta 4 seg
+        }, 1000); // conta 4 seg
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -147,7 +128,7 @@ public class Novo_Prato extends Activity {
     public void onBackPressed()
     {
         //CHAMAR A TELA INICAL - COM AS OPCAOES
-        menu_plano();
+        Tela_Menu();
     }
 
 

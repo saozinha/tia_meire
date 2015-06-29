@@ -1,6 +1,7 @@
 package com.conceicaolourenco.tiameirerefeicoes;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,8 +31,14 @@ import to.Produto;
  */
 public class Listagem_Produtos extends Activity {
 
-    List<Produto> listaprodutos;
+    private Produto produto = new Produto();
+    private EditText editCodigo;
+    private EditText editDescricao;
+    private EditText editPreco;
     private Context context;
+
+    private ListView listViewProdutos;
+    List<Produto> listaprodutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,72 +51,94 @@ public class Listagem_Produtos extends Activity {
 
         AcoesDataBase bd = new AcoesDataBase(this);
 
+        //Carrega a lista com todos os produtos
         listaprodutos = bd.ListarProdutos();
+
+        // Adiciona  a lista carregada no adapter
         ProdutoAdapter adapter = new ProdutoAdapter(listaprodutos, this);
-
         //PROCURA PELA LISTVIEW NO LAYTOU
-        final ListView listViewProd = (ListView) findViewById(R.id.listagem_produtos);
-        listViewProd.setAdapter(adapter);
+        listViewProdutos = (ListView) findViewById(R.id.listagem_produtos);
+        listViewProdutos.setAdapter(adapter);
 
-   // -------------------------------------------------------------------------------------
+        clickLista();
+
+        // -------------------------------------------------------------------------------------
         // ------- se clicar no item da lista ---------------
-        listViewProd.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //listViewProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> list, View view, int position, long id) {
+        // @Override
+        // public void onItemClick(AdapterView<?> list, View view, int position, long id) {
 
-
-                //---- CHamar o editar
-                EdicaoDePrato();
+        //String selectedItem = (String) listProd.getAdapter().getItem(position);
 
 
-            }
-        });
+                /*
+                long posicion = (id + 1);
+
+                String fraccionValues = String.valueOf(posicion);
+
+                Intent intent = new Intent(getApplication(), Editar_Prato.class);
+
+                intent.putExtra("_id", fraccionValues);
+
+                Toast.makeText(getApplicationContext(), fraccionValues + " selected", Toast.LENGTH_LONG).show();
+
+                startActivity(intent);
+                */
+
+        //---- CHamar o editar
+        //EdicaoDEprato();
+        //  }
+        // });
 
         // -------------------------------------------------------------------------------------
     }
 
-    public void EdicaoDePrato(){
-
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View v = inflater.inflate(R.layout.editar_prato_activity, null);
-
-        EditText editCodigo = (EditText)v.findViewById(R.id.editCodigo);
-        EditText descricaoEt = (EditText)v.findViewById(R.id.editDescricao);
-        EditText precoEt = (EditText)v.findViewById(R.id.editPreco);
-
-        Toast.makeText(getApplicationContext(), "selecionado >  "
-                + descricaoEt.getText() + "Preco > "
-                + precoEt.getText() , Toast.LENGTH_LONG).show();
-
-    }
-
-
-    public void Editarprato(){
-       //TODO
-        /*
-        *
+    public void EdicaoDEprato() {
+        //CHAMAR A TELA INICAL - COM AS OPCAOES
         Handler h = new Handler();
 
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent i = new Intent(SplahActivity.this,ListaProdutoActivity.class);
-                Intent i = new Intent(Listagem_Produtos.this,CustomDialogActivity.class);
-                startActivity(i);
+
+
+                Intent intent = new Intent(Listagem_Produtos.this, Editar_Prato.class);
+                intent.putExtra("descricao", editCodigo.getText().toString());
+                startActivity(intent);
                 finish();
             }
-        },1500); // conta 2 seg
-
-        */
+        }, 1000); // conta 4 seg
     }
+
 
     public Produto EntrarNaBusca(String codigo) {
         AcoesDataBase bd = new AcoesDataBase(this);
         Produto produto = bd.buscar(codigo);
         return produto;
     }
+
+
+    public void clickLista() {
+        listViewProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //Produto produto = (Produto) adapterView.getAdapter().getItem(position);
+                //Produto produto = (Produto) listViewProdutos.getItemAtPosition(position);
+                //position -= listViewProdutos.getHeaderViewsCount();
+                //final Produto produto  = (Produto) listViewProdutos.getAdapter().getItem(position);
+
+                final Produto produto = (Produto) listViewProdutos.getAdapter().getItem(position);
+                Intent intent = new Intent(Listagem_Produtos.this, Editar_Prato.class);
+                // deve serializar o objeto
+                intent.putExtra("Produto", produto);
+                intent.putExtra("Editar_codigo", "Editar_prato_lista");
+                startActivity(intent);
+            }
+        });
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

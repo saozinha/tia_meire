@@ -38,7 +38,7 @@ public class AcoesDataBase {
     }
 
     public void deletar(Produto produto) {
-        bd.delete("produto", "_id = " + produto.getId(), null);
+        bd.delete("produtos", "_id = " + produto.getId(), null);
     }
 
     public Produto buscar(String codigo) {
