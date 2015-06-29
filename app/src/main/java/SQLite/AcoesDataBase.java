@@ -41,7 +41,28 @@ public class AcoesDataBase {
         bd.delete("produto", "_id = " + produto.getId(), null);
     }
 
-    public List<Produto> buscar() {
+    public Produto buscar(String codigo) {
+        List<Produto> lista = new ArrayList<Produto>();
+        String[] colunas = new String[]{"_id", "descricao", "preco"};
+        Cursor cursor = bd.query("produtos", colunas, null, null, null, null, "descricao ASC");
+        Produto prod = new Produto();
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+                Long cod = cursor.getLong(0);
+                if (cursor.getLong(0) == Long.parseLong(codigo)) {
+                    prod.setId(cursor.getLong(0));
+                    prod.setDescricao(cursor.getString(1));
+                    prod.setPreco(cursor.getString(2));
+                    break;
+                }
+            } while (cursor.moveToNext());
+        }
+        return prod;
+    }
+
+    public List<Produto> ListarProdutos() {
         List<Produto> lista = new ArrayList<Produto>();
         String[] colunas = new String[]{"_id", "descricao", "preco"};
         Cursor cursor = bd.query("produtos", colunas, null, null, null, null, "descricao ASC");
