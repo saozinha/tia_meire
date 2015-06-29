@@ -28,6 +28,14 @@
             android:name=".Listagem_Produtos"
             android:label="@string/title_activity_listagem_produtos" >
         </activity>
+        <activity
+            android:name=".Editar_Prato"
+            android:label="@string/title_activity_editar_prato" >
+        </activity>
+        <activity
+            android:name=".CustomDialogActivity"
+            android:label="@string/title_activity_custom_dialog" >
+        </activity>
     </application>
 
 </manifest>
