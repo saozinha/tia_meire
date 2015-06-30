@@ -13,31 +13,36 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
         android:src="@drawable/logo_tia_meire"/>
 
     <TextView
         android:id="@+id/texto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:text="Chama a galera pra comer..."
         android:layout_centerHorizontal="true"
-        android:textSize="45sp"
+        android:textSize="30sp"
         android:password="false"
-        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:padding="5dp"
         android:shadowColor="#ff1b0c40" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/logo"
         android:text="Bateu a Fome ?"
-        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
         android:layout_centerHorizontal="true"
-        android:textSize="45sp"
+        android:textSize="30sp"
         android:shadowColor="#ff1b0c40"/>
 
 
