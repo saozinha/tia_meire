@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Produto implements Serializable {
 
-    // identifica o objeto para serialização - ou seja, transportar um objeto pela rede
+    // identifica o objeto para serializacao - ou seja, transportar um objeto pela rede
     private static final long serialVersionUID = 1L;
 
     public Long id;

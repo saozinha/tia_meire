@@ -25,8 +25,6 @@
             android:id="@+id/editCodigo"
             android:hint="* Código"
             android:textSize="15sp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             android:textColor="#ff19115a"
             android:shadowColor="#ff55474f">
         </TextView>

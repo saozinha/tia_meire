@@ -1,44 +1,34 @@
 package com.conceicaolourenco.tiameirerefeicoes;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import SQLite.AcoesDataBase;
-import adapter.EditarProdutoAdapter;
 import adapter.ProdutoAdapter;
 import to.Produto;
 
-/**
- * Created by ConceicaoLourenco on 26/06/2015.
- */
+
 public class Listagem_Produtos extends Activity {
 
-    private Produto produto = new Produto();
-    private EditText editCodigo;
-    private EditText editDescricao;
-    private EditText editPreco;
-    private Context context;
+    //private Produto produto = new Produto();
+    //private EditText editCodigo;
+    //private EditText editDescricao;
+    //private EditText editPreco;
+    //private Context context;
 
-    private ListView listViewProdutos;
     List<Produto> listaprodutos;
+    private ListView listViewProdutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,79 +51,18 @@ public class Listagem_Produtos extends Activity {
         listViewProdutos.setAdapter(adapter);
 
         clickLista();
-
-        // -------------------------------------------------------------------------------------
-        // ------- se clicar no item da lista ---------------
-        //listViewProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-        // @Override
-        // public void onItemClick(AdapterView<?> list, View view, int position, long id) {
-
-        //String selectedItem = (String) listProd.getAdapter().getItem(position);
-
-
-                /*
-                long posicion = (id + 1);
-
-                String fraccionValues = String.valueOf(posicion);
-
-                Intent intent = new Intent(getApplication(), Editar_Prato.class);
-
-                intent.putExtra("_id", fraccionValues);
-
-                Toast.makeText(getApplicationContext(), fraccionValues + " selected", Toast.LENGTH_LONG).show();
-
-                startActivity(intent);
-                */
-
-        //---- CHamar o editar
-        //EdicaoDEprato();
-        //  }
-        // });
-
-        // -------------------------------------------------------------------------------------
     }
-
-    public void EdicaoDEprato() {
-        //CHAMAR A TELA INICAL - COM AS OPCAOES
-        Handler h = new Handler();
-
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-
-                Intent intent = new Intent(Listagem_Produtos.this, Editar_Prato.class);
-                intent.putExtra("descricao", editCodigo.getText().toString());
-                startActivity(intent);
-                finish();
-            }
-        }, 1000); // conta 4 seg
-    }
-
-
-    public Produto EntrarNaBusca(String codigo) {
-        AcoesDataBase bd = new AcoesDataBase(this);
-        Produto produto = bd.buscar(codigo);
-        return produto;
-    }
-
 
     public void clickLista() {
         listViewProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                //Produto produto = (Produto) adapterView.getAdapter().getItem(position);
-                //Produto produto = (Produto) listViewProdutos.getItemAtPosition(position);
-                //position -= listViewProdutos.getHeaderViewsCount();
-                //final Produto produto  = (Produto) listViewProdutos.getAdapter().getItem(position);
-
                 final Produto produto = (Produto) listViewProdutos.getAdapter().getItem(position);
                 Intent intent = new Intent(Listagem_Produtos.this, Editar_Prato.class);
                 // deve serializar o objeto
                 intent.putExtra("Produto", produto);
-                intent.putExtra("Editar_codigo", "Editar_prato_lista");
+                //intent.putExtra("Editar_codigo", "Editar_prato_lista");
                 startActivity(intent);
             }
         });
