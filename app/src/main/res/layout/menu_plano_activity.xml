@@ -1,20 +1,17 @@
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/scrollView1"
     tools:context="com.conceicaolourenco.tiameirerefeicoes.Menu_plano">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:orientation="vertical"
         android:id="@+id/layout_novo_p"
-        android:orientation="horizontal"
         android:background="#FFF5EE">
 
 
@@ -23,6 +20,7 @@
             android:layout_height="120dp"
             android:id="@+id/btn_cardapio"
             android:src="@drawable/cardapio_red"
+            android:layout_alignParentRight="true"
             android:layout_margin="25dp"
             android:clickable="true"
             />
@@ -30,22 +28,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_cardapio"
-            android:layout_gravity="center"
-            android:layout_alignParentStart="true"
+            android:layout_above="@+id/btn_cardapio"
+            android:layout_centerHorizontal="@+id/btn_cardapio"
+            android:paddingLeft="100dp"
             android:text="Visualizar"
             android:textSize="30sp"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_Cad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/layout_novo_p"
-        android:orientation="horizontal"
-        android:background="#FFF5EE">
 
         <ImageView
             android:layout_width="105dp"
@@ -53,6 +41,7 @@
             android:id="@+id/btn_cad_prato"
             android:src="@drawable/prato_roxo"
             android:layout_margin="25dp"
+            android:paddingLeft="10dp"
             android:clickable="true"/>
 
         <TextView
@@ -61,21 +50,10 @@
             android:layout_below="@+id/btn_cad_prato"
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
-            android:layout_margin="25dp"
+            android:paddingLeft="100dp"
             android:text="Cadastrar Pratos"
             android:textSize="30sp"/>
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/layout_Cad"
-        android:orientation="horizontal"
-        android:id="@+id/edicao"
-        android:background="#FFF5EE">
 
         <ImageView
             android:layout_width="130dp"
@@ -83,6 +61,7 @@
             android:id="@+id/btn_edit_prato"
             android:src="@drawable/editar_ico"
             android:layout_margin="25dp"
+            android:paddingLeft="10dp"
             android:clickable="true"/>
 
         <TextView
@@ -92,20 +71,11 @@
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
             android:layout_margin="25dp"
+            android:paddingLeft="100dp"
             android:text="Editar Prato"
             android:textSize="30sp"
             android:clickable="true"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/edicao"
-        android:orientation="horizontal"
-        android:id="@+id/layout_entrega"
-        android:background="#FFF5EE">
 
         <ImageView
             android:layout_width="130dp"
@@ -113,6 +83,7 @@
             android:id="@+id/btn_lista_pedidos"
             android:src="@drawable/delivery_colorido"
             android:layout_margin="25dp"
+            android:paddingLeft="10dp"
             android:clickable="true"/>
 
         <TextView
@@ -122,56 +93,13 @@
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
             android:layout_margin="25dp"
+            android:paddingLeft="100dp"
             android:text="Visualizar Pedidos"
             android:textSize="30sp"
             android:clickable="true"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="false"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="false"
-        android:layout_below="@+id/layout_entrega"
+</ScrollView>
 
-        android:orientation="horizontal"
-        android:id="@+id/layout_touch"
-        android:background="#FFFFFF">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/touh"
-            android:src="@drawable/touch_black"
-            android:layout_margin="25dp"
-            android:clickable="false" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_lista_pedidos"
-            android:layout_gravity="center"
-            android:layout_alignParentStart="true"
-            android:layout_margin="25dp"
-            android:text="Click nas Imagens"
-            android:textSize="35sp"
-            android:clickable="false" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_lista_pedidos"
-            android:layout_gravity="center"
-            android:layout_alignParentStart="true"
-            android:layout_margin="25dp"
-            android:text="por Conceição Lourenço"
-            android:textSize="15sp"
-            android:clickable="false" />
-
-    </LinearLayout>
-
-</RelativeLayout>
