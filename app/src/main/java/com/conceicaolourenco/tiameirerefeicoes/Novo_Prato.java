@@ -47,28 +47,6 @@ public class Novo_Prato extends Activity {
         salvarBt = (Button)findViewById(R.id.bt_enviar);
        // editarBt = (Button)findViewById(R.id.bt_editar);
 
-        Intent intent = getIntent();
-        // se já houver valor no layout
-        if (intent != null) {
-            Bundle bundle = intent.getExtras();
-            if(bundle != null){
-                produto.setId(bundle.getLong("id"));
-                produto.setDescricao(bundle.getString("descricao"));
-                produto.setPreco(bundle.getString("preco"));
-
-                editCodigo.setText(produto.getId().toString());
-                descricaoEt.setText(produto.getDescricao());
-                precoEt.setText(produto.getPreco());
-
-                // se houver valor - deixar editar
-                //editarBt.setVisibility(View.VISIBLE);
-                //salvarBt.setVisibility(View.INVISIBLE);
-
-            }
-            //salvarBt.setVisibility(View.VISIBLE);
-            //editarBt.setVisibility(View.INVISIBLE);
-        }
-
         salvarBt.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +73,7 @@ public class Novo_Prato extends Activity {
 
         Toast.makeText(this, "Produto Inserido !!", Toast.LENGTH_SHORT).show();
 
-        //helper.close();
+        Tela_Menu();
     }
 
     public void Tela_Menu() {
