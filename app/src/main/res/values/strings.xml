@@ -11,4 +11,5 @@
     <string name="title_activity_listagem_produtos">Listagem_Produtos</string>
     <string name="title_activity_editar_prato">editar_prato</string>
     <string name="title_activity_custom_dialog">CustomDialogActivity</string>
+    <string name="title_activity_editar__prato">Editar_Prato</string>
 </resources>

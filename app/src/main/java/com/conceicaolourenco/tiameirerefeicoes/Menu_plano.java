@@ -2,23 +2,12 @@ package com.conceicaolourenco.tiameirerefeicoes;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 
-import SQLite.AcoesDataBase;
-import adapter.EditarProdutoAdapter;
-import to.Produto;
-
-
 public class Menu_plano extends Activity {
-
-    EditText editCodigo;
-    EditText editDescricao;
-    EditText editPreco;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,28 +111,6 @@ public class Menu_plano extends Activity {
                 finish();
             }
         },1500); // conta 2 seg
-    }
-
-    public Produto EntrarNaBusca(String codigo) {
-        AcoesDataBase bd = new AcoesDataBase(this);
-        Produto produto = new Produto();
-        if(codigo!="") {
-            produto = bd.buscar(codigo);
-        }
-        return produto;
-    }
-
-    public void TelaEdicao(){
-        Handler h = new Handler();
-
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(Menu_plano.this, Editar_Prato.class);
-                startActivity(i);
-                finish();
-            }
-        },1000); // conta 4 seg
     }
 
 }
