@@ -5,9 +5,6 @@
     android:orientation="vertical"
     android:background="#ffffff">
 
-
-
-
     <!-- FIM DOS BOTOES -->
 
     <LinearLayout
@@ -33,19 +30,6 @@
 
     </LinearLayout >
 
-    <LinearLayout
-        android:id="@+id/campos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/layout_logo"
-        android:paddingTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#ffffffff">
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/resultado"
@@ -53,9 +37,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@+id/layout_logo"
-        android:paddingTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:background="#ffbca6b8">
 
         <ListView

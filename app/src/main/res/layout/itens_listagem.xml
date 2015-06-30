@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/campos"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="#fffffbfb"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/editCodigo"
             android:hint="* Código"
-            android:textSize="30sp"
+            android:textSize="15sp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:textColor="#ff19115a"
@@ -39,7 +39,7 @@
             android:layout_above="@+id/editCodigo"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:textColor="#ff160e63">
         </TextView>
 
@@ -51,7 +51,7 @@
             android:layout_alignParentRight="true"
             android:id="@+id/editPreco"
             android:hint="* Preço"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:textColor="#ffff2a5c" />
     </LinearLayout>
 

@@ -7,12 +7,9 @@
     tools:context="com.conceicaolourenco.tiameirerefeicoes.Menu_plano">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="15dp"
         android:orientation="vertical"
-        android:id="@+id/layout_novo_p"
-        android:background="#FFF5EE">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <ImageView
@@ -21,18 +18,16 @@
             android:id="@+id/btn_cardapio"
             android:src="@drawable/cardapio_red"
             android:layout_alignParentRight="true"
-            android:layout_margin="25dp"
+            android:layout_margin="30dp"
             android:clickable="true"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/btn_cardapio"
-            android:layout_centerHorizontal="@+id/btn_cardapio"
-            android:paddingLeft="100dp"
-            android:text="Visualizar"
-            android:textSize="30sp"/>
+            android:text="Visualizar Cardápio"
+            android:layout_marginLeft="120dp"
+            android:textSize="20sp" />
 
 
         <ImageView
@@ -40,8 +35,7 @@
             android:layout_height="110dp"
             android:id="@+id/btn_cad_prato"
             android:src="@drawable/prato_roxo"
-            android:layout_margin="25dp"
-            android:paddingLeft="10dp"
+            android:layout_margin="30dp"
             android:clickable="true"/>
 
         <TextView
@@ -50,18 +44,17 @@
             android:layout_below="@+id/btn_cad_prato"
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
-            android:paddingLeft="100dp"
+            android:layout_marginLeft="100dp"
             android:text="Cadastrar Pratos"
-            android:textSize="30sp"/>
+            android:textSize="20sp" />
 
 
         <ImageView
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:id="@+id/btn_edit_prato"
             android:src="@drawable/editar_ico"
-            android:layout_margin="25dp"
-            android:paddingLeft="10dp"
+            android:layout_margin="30dp"
             android:clickable="true"/>
 
         <TextView
@@ -70,10 +63,9 @@
             android:layout_below="@+id/btn_edit_prato"
             android:layout_gravity="center"
             android:layout_alignParentStart="true"
-            android:layout_margin="25dp"
-            android:paddingLeft="100dp"
+            android:layout_marginLeft="100dp"
             android:text="Editar Prato"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:clickable="true"/>
 
 
@@ -82,24 +74,20 @@
             android:layout_height="130dp"
             android:id="@+id/btn_lista_pedidos"
             android:src="@drawable/delivery_colorido"
-            android:layout_margin="25dp"
-            android:paddingLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:clickable="true"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_lista_pedidos"
-            android:layout_gravity="center"
-            android:layout_alignParentStart="true"
-            android:layout_margin="25dp"
-            android:paddingLeft="100dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginBottom="30dp"
             android:text="Visualizar Pedidos"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:clickable="true"/>
 
     </LinearLayout>
-
 </ScrollView>
 
 
