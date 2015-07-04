@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/logoin"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="190dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/logo_tia_meire" />
 
@@ -18,11 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:text="CLIQUE NA IMAGEM "
         android:textAppearance="@android:color/holo_orange_light"
         android:textColor="#fff2423c"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
 
     <ScrollView
